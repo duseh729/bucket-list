@@ -12,7 +12,8 @@ stamp.forEach((element) =>element.addEventListener("click", function (e) {
     key=element.id
     console.log(key)
     if (localStorage.getItem(key)){
-      element.classList.add('done')
+      element.classList.remove('done')
+      localStorage.removeItem(key)
     }else{
       localStorage.setItem(element.id, 'ok');
       element.classList.add('done')
